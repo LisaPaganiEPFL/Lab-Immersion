@@ -308,16 +308,16 @@ def fixation_probability_stat(in_numbers, folder, migration_matrix, fitnesses, n
             fix_cycle[i] = end_cycle
             if save_dynamics:
                 #We save first 100000 fixation trajectories
-                if fix_count<100000:
+                if fix_count<1000:
                     np.savez(folder+"/fix_"+str(fix_count),follow_numbers)
-                    np.savez(folder+"/fix_k_"+str(fix_count),follow_k)
+                    #np.savez(folder+"/fix_k_"+str(fix_count),follow_k)
         else:
             ex_cycle[i] = end_cycle
             if save_dynamics:
                 #We save first 100000 fixation trajectories
-                if i-fix_count<100000:    
+                if i-fix_count<1000:    
                     np.savez(folder+"/ex_"+str(i-fix_count),follow_numbers)
-                    np.savez(folder+"/ex_k_"+str(i-fix_count),follow_k)
+                    #np.savez(folder+"/ex_k_"+str(i-fix_count),follow_k)
                     
     #Number of extinctions
     ex_count=nb_sim-fix_count
